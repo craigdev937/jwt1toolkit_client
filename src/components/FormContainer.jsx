@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-export const Form = ({ children }) => {
+export const FormContainer = ({ children }) => {
     return (
         <React.Fragment>
             <Container>
