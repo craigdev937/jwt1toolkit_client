@@ -17,7 +17,8 @@ export const Register = () => {
     const [confirmPassword, setConfirmPassword] = React.useState("");
 
     const { userInfo } = useSelector((state) => state.auth);
-    const [register, { isLoading }] = AuthAPI.useRegisterMutation();
+    const [register, { isLoading }] = 
+    AuthAPI.useRegisterMutation();
 
     React.useEffect(() => {
         if (userInfo) {
@@ -31,8 +32,9 @@ export const Register = () => {
             toast.error("The Passwords do NOT match!");
         } else {
             try {
-                const res = await register({ name, email, password })
-                .unwrap();
+                const res = await register({
+                    name, email, password 
+                }).unwrap();
                 dispatch(Actions.setCredentials({...res}));
                 navigate(redirect);
             } catch (error) {
@@ -48,23 +50,31 @@ export const Register = () => {
         <FormContainer>
             <h1>Register</h1>
             <Form onSubmit={handleSubmit}>
-                <Form.Group className="my-2" controlId="name">
+                <Form.Group 
+                    className="my-2" 
+                    controlId="name"
+                >
                     <Form.Label>Name</Form.Label>
                     <Form.Control 
                         type="name"
                         placeholder="Enter name"
                         value={name}
-                        onChange={(event) => setName(event.target.value)}
+                        onChange={(event) => 
+                            setName(event.target.value)}
 
                     />
                 </Form.Group>
-                <Form.Group className="my-2" controlId="email">
+                <Form.Group 
+                    className="my-2" 
+                    controlId="email"
+                >
                     <Form.Label>Email Address</Form.Label>
                     <Form.Control 
                         type="email"
                         placeholder="Enter email"
                         value={email}
-                        onChange={(event) => setEmail(event.target.value)}
+                        onChange={(event) => 
+                            setEmail(event.target.value)}
                         
                     />
                 </Form.Group>
@@ -74,7 +84,8 @@ export const Register = () => {
                         type="password"
                         placeholder="Enter password"
                         value={password}
-                        onChange={(event) => setPassword(event.target.value)}
+                        onChange={(event) => 
+                            setPassword(event.target.value)}
                         
                     />
                 </Form.Group>
@@ -84,7 +95,8 @@ export const Register = () => {
                         type="password"
                         placeholder="Confirm password"
                         value={confirmPassword}
-                        onChange={(event) => setConfirmPassword(event.target.value)}
+                        onChange={(event) => 
+                            setConfirmPassword(event.target.value)}
                         
                     />
                 </Form.Group>
