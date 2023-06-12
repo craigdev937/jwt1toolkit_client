@@ -61,7 +61,6 @@ export const Register = () => {
                         value={name}
                         onChange={(event) => 
                             setName(event.target.value)}
-
                     />
                 </Form.Group>
                 <Form.Group 
@@ -96,8 +95,7 @@ export const Register = () => {
                         placeholder="Confirm password"
                         value={confirmPassword}
                         onChange={(event) => 
-                            setConfirmPassword(event.target.value)}
-                        
+                            setConfirmPassword(event.target.value)}                        
                     />
                 </Form.Group>
                 <Button

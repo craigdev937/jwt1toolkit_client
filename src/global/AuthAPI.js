@@ -1,6 +1,6 @@
 import { createApi, 
     fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-const URL = "https://jwt1toolkit.up.railway.app/";
+const URL = "https://jwt1toolkit.up.railway.app";
 
 export const AuthAPI = createApi({
     reducerPath: "AuthAPI",
